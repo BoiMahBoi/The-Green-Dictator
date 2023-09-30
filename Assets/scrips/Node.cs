@@ -10,11 +10,24 @@ public class Node : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
-    public void Purchase(float price, float happyMod, float poluMod, float moneyMod)
+
+    public void PurchasePrice(float price)
     {
         gameManager.money = gameManager.money - price;
+    }
+
+    public void PurchaseHappyMod(float happyMod)
+    {
         gameManager.happinessModifier = gameManager.happinessModifier + happyMod;
+    }
+
+    public void PurchasePoluMod(float poluMod)
+    {
         gameManager.polutionModifier = gameManager.polutionModifier + poluMod;
+    }
+
+    public void PurchaseMoneyMod(float moneyMod)
+    {
         gameManager.moneyModifier = gameManager.moneyModifier + moneyMod;
     }
 }
