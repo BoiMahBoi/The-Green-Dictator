@@ -11,6 +11,10 @@ public class Node : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
+    public void DeactiveButton(GameObject button)
+    {
+        button.GetComponent<Button>().interactable = false;
+    }
     public void PurchasePrice(float price)
     {
         gameManager.money = gameManager.money - price;

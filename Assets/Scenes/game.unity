@@ -384,9 +384,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0d5d435e0f6c940a21aae9d9969ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  happiness: 0
-  polution: 0
-  money: 0
+  happiness: 100
+  polution: 100
+  money: 1000
   time: 0
   happinessModifier: 1
   polutionModifier: 1
