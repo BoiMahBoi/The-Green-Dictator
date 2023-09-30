@@ -388,9 +388,9 @@ MonoBehaviour:
   polution: 100
   money: 1000
   time: 0
-  happinessModifier: 1
-  polutionModifier: 1
-  moneyModifier: 1
+  happinessModifier: 0
+  polutionModifier: 0
+  moneyModifier: 0
 --- !u!4 &943841821
 Transform:
   m_ObjectHideFlags: 0
@@ -535,6 +535,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: -1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 943841819}
+        m_TargetAssemblyTypeName: Node, Assembly-CSharp
+        m_MethodName: DeactiveButton
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1805435957}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
