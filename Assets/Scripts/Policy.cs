@@ -28,7 +28,7 @@ public class Policy : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!isPurchased)
+        if (!isPurchased && gameManager.money > price)
         {
             isPurchased = true;
             gameManager.money = gameManager.money - price;
