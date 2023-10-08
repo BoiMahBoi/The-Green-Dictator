@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class GameManager : MonoBehaviour
     public float happiness = 0;
     public float polution = 0;
     public float money = 0;
-    public float time;
+    public float timeInSeconds = 10f; //The countdown time in seconds, before the game ends
 
     [Header("Modifiers")]
     public float polutionModifier = 0;
@@ -22,14 +23,55 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI PolutionUI;
     public TextMeshProUGUI TimeUI;
 
-    private bool gameOver = false;
+    [Header("Bar References")]
+    public BarScript barScript;
 
+    private bool gameOver = false;
+    [SerializeField] private bool isGame = false; //Boolean for whether the game is actively playing or not
+
+    public void Start()
+    {
+        barScript.SetTimeBar(timeInSeconds); //Setting the Time Bar to the TimeInSeconds variable
+        StartGame(); //Called in Start() since there is no start button yet
+    }
+
+    public void StartGame() //Function that starts game 
+    {
+        isGame = true;
+    }
+
+    public void ToggleGamePause() //Function that pauses and unpauses game
+    {
+        isGame = !isGame;
+    }
+    
     private void FixedUpdate()
     {
         CalcHappiness();
         CalcMoney();
         CalcPolution();
-        CheckGameStatus();
+        CheckGameStatus();       
+    }
+
+    private void Update()
+    {
+        if (isGame) //If game is playing
+        {
+            timeInSeconds -= Time.deltaTime; //Substract time from timeInSeconds
+            barScript.UpdateTimeBar(timeInSeconds); //Update Time Bar
+
+            if (timeInSeconds <= 0) 
+            {
+                timeInSeconds = 0;
+                isGame = false;
+                YouWin();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            ToggleGamePause();
+        }
     }
 
     private void CalcHappiness()
@@ -54,4 +96,10 @@ public class GameManager : MonoBehaviour
             Debug.Log("You lost! No more money :(");
         }
     }
+
+    private void YouWin()
+    {
+        Debug.Log("You Won!");
+    }
+
 }
