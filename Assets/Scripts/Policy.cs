@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -5,7 +6,19 @@ using UnityEngine;
 
 public class Policy : MonoBehaviour
 {
+    [Serializable]
+    public class Dependency
+    {
+        public string name;
+        public GameObject dependency;
+        public bool activated;
+        public float moneyDep;
+        public float happyDep;
+        public float polutionDep;
+    }
+
     private GameManager gameManager;
+    private DependencyManager dependencyManager;
 
     [Header("Basic Settings")]
     public float price;
@@ -13,7 +26,7 @@ public class Policy : MonoBehaviour
     public float happyMod;
     public float polutionMod;
 
-    private bool isPurchased = false;
+    public bool isPurchased = false;
 
     [Header("OnHover Settings")]
     public float executeTime;
@@ -21,14 +34,25 @@ public class Policy : MonoBehaviour
     private float hoverTime = 0f;
     private bool startTimeCount;
 
+    [SerializeField] public Dependency[] Dependencies;
+
+    [ExecuteInEditMode]
     public void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        dependencyManager = GameObject.Find("DependencyManager").GetComponent<DependencyManager>();
+
+        foreach (Dependency dependency in Dependencies) //Foreach loop naming the elements in the inspector for better readability and organization
+        {
+            dependency.name = dependency.dependency.name;
+        }
     }
+
+
 
     private void OnMouseDown()
     {
-        if (!isPurchased && gameManager.money > price)
+        if (!isPurchased && gameManager.money >= price)
         {
             isPurchased = true;
             gameManager.money = gameManager.money - price;
@@ -36,6 +60,29 @@ public class Policy : MonoBehaviour
             gameManager.happinessModifier = gameManager.happinessModifier + happyMod;
             gameManager.polutionModifier = gameManager.polutionModifier + polutionMod;
             gameObject.GetComponent<MeshRenderer>().material.color = Color.green;
+
+            dependencyManager.CheckAllDependencies();
+        }
+    }
+
+
+    public void CheckDependencies()
+    {
+        foreach (Dependency dependency in Dependencies)
+        {
+            if (dependency.dependency.GetComponent<Policy>().isPurchased && !dependency.activated)
+            {
+                dependency.activated = true;
+                moneyMod += dependency.moneyDep;
+                happyMod += dependency.happyDep;
+                polutionMod += dependency.polutionDep;
+                if (isPurchased)
+                {
+                    gameManager.moneyModifier += dependency.moneyDep;
+                    gameManager.happinessModifier += dependency.happyDep;
+                    gameManager.polutionModifier += dependency.polutionDep;
+                }
+            }
         }
     }
 

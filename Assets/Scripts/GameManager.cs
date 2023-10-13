@@ -64,11 +64,11 @@ public class GameManager : MonoBehaviour
             {
                 timeInSeconds = 0;
                 isGame = false;
-                YouWin();
+                Victory();
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P)) //Pause and Unpause game when pressing P
         {
             ToggleGamePause();
         }
@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void YouWin()
+    private void Victory() //Function for when you win
     {
         Debug.Log("You Won!");
     }
