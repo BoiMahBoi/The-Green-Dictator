@@ -79,11 +79,13 @@ public class GameManager : MonoBehaviour
         happiness = happiness + (happinessModifier * 0.1f);
         HappyUI.SetText("Happiness: " + happiness.ToString());
     }
+
     private void CalcPolution()
     {
         polution = polution + (polutionModifier * 0.1f);
         PolutionUI.SetText("Polution: " + polution.ToString());
     }
+
     private void CalcMoney()
     {
         money = money + (moneyModifier * 0.1f);
