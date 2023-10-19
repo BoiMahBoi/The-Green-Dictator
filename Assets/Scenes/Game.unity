@@ -2251,7 +2251,7 @@ MonoBehaviour:
   happiness: 100
   polution: 100
   money: 1000
-  timeInSeconds: 60
+  timeInSeconds: 5
   polutionModifier: 0
   happinessModifier: 0
   moneyModifier: 0

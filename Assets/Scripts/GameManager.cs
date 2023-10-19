@@ -63,8 +63,14 @@ public class GameManager : MonoBehaviour
             if (timeInSeconds <= 0) 
             {
                 timeInSeconds = 0;
-                isGame = false;
-                Victory();
+
+                if (polution > 0)
+                {
+                    StartCoroutine(EndGame("You lost! You didn't go carbon neutral in time."));
+                } else
+                {
+                    StartCoroutine(EndGame("Congratulations, you won! You went carbon neutral!"));
+                }
             }
         }
 
@@ -93,15 +99,21 @@ public class GameManager : MonoBehaviour
     }
 
     private void CheckGameStatus() {
-        if((money < 0 && moneyModifier <= 0) && !gameOver) {
-            gameOver = true;
-            Debug.Log("You lost! No more money :(");
+        if((money <= 0 && moneyModifier <= 0) && !gameOver) {
+            StartCoroutine(EndGame("You lost! No more money left in the bank."));
+        }
+
+        if ((happiness <= 0 && happinessModifier <= 0) && !gameOver)
+        {
+            StartCoroutine(EndGame("You lost! The people rebelled against you!"));
         }
     }
 
-    private void Victory() //Function for when you win
+    private IEnumerator EndGame(string endMessage)
     {
-        Debug.Log("You Won!");
+        ToggleGamePause();
+        gameOver = true;
+        Debug.Log(endMessage);
+        yield return new WaitForSeconds(1);
     }
-
 }
