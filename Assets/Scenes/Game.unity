@@ -1338,9 +1338,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 100
-  moneyMod: 1
+  moneyMod: 0
   happyMod: 0
-  polutionMod: 0
+  polutionMod: -0.5
   isPurchased: 0
   executeTime: 0.5
   infoWindow: {fileID: 1404942400}
@@ -3846,7 +3846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 100
-  moneyMod: 1
+  moneyMod: -1
   happyMod: -0.5
   polutionMod: -0.5
   isPurchased: 0
@@ -6573,7 +6573,7 @@ GameObject:
   - component: {fileID: 6098071977270719805}
   - component: {fileID: 6098071977270719806}
   m_Layer: 0
-  m_Name: Policy1Template
+  m_Name: Ecology
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7031,7 +7031,7 @@ GameObject:
   - component: {fileID: 6098071977468002139}
   - component: {fileID: 6098071977468002140}
   m_Layer: 0
-  m_Name: Policy2Template
+  m_Name: Meat & Diary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8314,7 +8314,7 @@ GameObject:
   - component: {fileID: 6447593044261414263}
   - component: {fileID: 6447593044261414260}
   m_Layer: 0
-  m_Name: Policy1Template
+  m_Name: Sustainable Alternatives
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8735,7 +8735,7 @@ GameObject:
   - component: {fileID: 6447593044458434321}
   - component: {fileID: 6447593044458434326}
   m_Layer: 0
-  m_Name: Policy2Template
+  m_Name: Water Effeciency
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
