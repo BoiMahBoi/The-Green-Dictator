@@ -3473,7 +3473,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Implement high taxes on food imported by air freight, to discourage consumers
+  m_text: Implement high taxes on food imported by flights, to discourage consumers
     from buying them, and encourage importers to adopt eco-friendly transportation
     methods for imported foods.
   m_isRightToLeft: 0
@@ -10273,7 +10273,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Template
+  m_text: 'Meet and diary
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
