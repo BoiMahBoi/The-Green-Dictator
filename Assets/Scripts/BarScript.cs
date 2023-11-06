@@ -18,4 +18,5 @@ public class BarScript : MonoBehaviour
     {
         slider.value = timeRemaining;
     }
+
 }

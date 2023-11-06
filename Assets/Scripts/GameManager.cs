@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Bar References")]
     public BarScript barScript;
+    public HappyBarScript happyBarScript;
+    public PoluBarScript poluBarScript;
 
     private bool gameOver = false;
     [SerializeField] private bool isGame = false; //Boolean for whether the game is actively playing or not
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         barScript.SetTimeBar(timeInSeconds); //Setting the Time Bar to the TimeInSeconds variable
+        happyBarScript.UpdateHappyBar(happiness); //Setting the Happy Bar to the happiness variable
         StartGame(); //Called in Start() since there is no start button yet
     }
 
@@ -83,13 +86,15 @@ public class GameManager : MonoBehaviour
     private void CalcHappiness()
     {
         happiness = happiness + (happinessModifier * 0.1f);
-        HappyUI.SetText("Happiness: " + happiness.ToString());
+        happyBarScript.UpdateHappyBar(happiness);
+        //HappyUI.SetText("Happiness: " + happiness.ToString());//
     }
 
     private void CalcPolution()
     {
         polution = polution + (polutionModifier * 0.1f);
-        PolutionUI.SetText("Polution: " + polution.ToString());
+        poluBarScript.UpdatePoluBar(polution);
+        //PolutionUI.SetText("Polution: " + polution.ToString());//
     }
 
     private void CalcMoney()
