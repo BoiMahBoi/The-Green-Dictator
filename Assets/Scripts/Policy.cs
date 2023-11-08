@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Policy : MonoBehaviour
 {
@@ -60,6 +61,7 @@ public class Policy : MonoBehaviour
             gameManager.happinessModifier = gameManager.happinessModifier + happyMod;
             gameManager.polutionModifier = gameManager.polutionModifier + polutionMod;
             gameObject.GetComponent<MeshRenderer>().material.color = Color.green;
+            gameObject.GetComponentInChildren<Image>().color = Color.green;
 
             dependencyManager.CheckAllDependencies();
         }
