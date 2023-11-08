@@ -5989,10 +5989,10 @@ MonoBehaviour:
   happiness: 100
   polution: 100
   money: 1000
-  timeInSeconds: 5
-  polutionModifier: 0
-  happinessModifier: 0
-  moneyModifier: 0
+  timeInSeconds: 360
+  polutionModifier: 1
+  happinessModifier: 1
+  moneyModifier: 1
   MoneyUI: {fileID: 940294395}
   HappyUI: {fileID: 2044395015}
   PolutionUI: {fileID: 2029752999}
@@ -11254,7 +11254,7 @@ GameObject:
   - component: {fileID: 1830023314}
   - component: {fileID: 1830023313}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

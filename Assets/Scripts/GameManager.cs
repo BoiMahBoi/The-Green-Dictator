@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public float happiness = 0;
     public float polution = 0;
     public float money = 0;
-    public float timeInSeconds = 10f; //The countdown time in seconds, before the game ends
+    public float timeInSeconds = 360f; //The countdown time in seconds, before the game ends (Each second is a month)
 
     [Header("Modifiers")]
     public float polutionModifier = 0;
@@ -43,18 +43,19 @@ public class GameManager : MonoBehaviour
         isGame = true;
     }
 
+
     public void ToggleGamePause() //Function that pauses and unpauses game
     {
         isGame = !isGame;
     }
     
-    private void FixedUpdate()
-    {
-        CalcHappiness();
-        CalcMoney();
-        CalcPolution();
-        CheckGameStatus();       
-    }
+    //private void FixedUpdate()
+    //{
+    //    CalcHappiness();
+    //    CalcMoney();
+    //    CalcPolution();
+    //    CheckGameStatus();       
+    //}
 
     private void Update()
     {
@@ -62,6 +63,11 @@ public class GameManager : MonoBehaviour
         {
             timeInSeconds -= Time.deltaTime; //Substract time from timeInSeconds
             barScript.UpdateTimeBar(timeInSeconds); //Update Time Bar
+
+            CalcHappiness();
+            CalcMoney();
+            CalcPolution();
+            CheckGameStatus();
 
             if (timeInSeconds <= 0) 
             {
@@ -85,21 +91,21 @@ public class GameManager : MonoBehaviour
 
     private void CalcHappiness()
     {
-        happiness = happiness + (happinessModifier * 0.1f);
+        happiness = happiness + (happinessModifier * Time.deltaTime);
         happyBarScript.UpdateHappyBar(happiness);
         //HappyUI.SetText("Happiness: " + happiness.ToString());//
     }
 
     private void CalcPolution()
     {
-        polution = polution + (polutionModifier * 0.1f);
+        polution = polution + (polutionModifier * Time.deltaTime);
         poluBarScript.UpdatePoluBar(polution);
         //PolutionUI.SetText("Polution: " + polution.ToString());//
     }
 
     private void CalcMoney()
     {
-        money = money + (moneyModifier * 0.1f);
+        money = money + (moneyModifier * Time.deltaTime);
         MoneyUI.SetText("Money: " + money.ToString());
     }
 
