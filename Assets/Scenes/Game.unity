@@ -2229,8 +2229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 0
-  moneyMod: 0
+  price: 11000
+  moneyMod: 3500
   happyMod: 0
   polutionMod: 0
   isPurchased: 0
@@ -2511,8 +2511,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 100
-  moneyMod: 0
+  price: 350000
+  moneyMod: 20000
   happyMod: 0
   polutionMod: -0.5
   isPurchased: 0
@@ -4656,8 +4656,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 0
-  moneyMod: 0
+  price: 200000
+  moneyMod: 82
   happyMod: 0
   polutionMod: 0
   isPurchased: 0
@@ -5377,8 +5377,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 0
-  moneyMod: 0
+  price: 5000
+  moneyMod: 9000
   happyMod: 0
   polutionMod: 0
   isPurchased: 0
@@ -5988,7 +5988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   happiness: 100
   polution: 100
-  money: 1000
+  money: 100000
   timeInSeconds: 360
   polutionModifier: 1
   happinessModifier: 1
@@ -8799,8 +8799,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 100
-  moneyMod: -1
+  price: 24000
+  moneyMod: -30300
   happyMod: -0.5
   polutionMod: -0.5
   isPurchased: 0
@@ -8808,17 +8808,23 @@ MonoBehaviour:
   infoWindow: {fileID: 667728311}
   Dependencies:
   - name: 
-    dependency: {fileID: 505661058}
+    dependency: {fileID: 1832568020}
     activated: 0
-    moneyDep: 20
-    happyDep: 20
-    polutionDep: 20
+    moneyDep: 0
+    happyDep: 0
+    polutionDep: 0
   - name: 
     dependency: {fileID: 1641952750}
     activated: 0
-    moneyDep: -20
-    happyDep: -20
-    polutionDep: -20
+    moneyDep: 0
+    happyDep: 0
+    polutionDep: 0
+  - name: 
+    dependency: {fileID: 875324138}
+    activated: 0
+    moneyDep: 0
+    happyDep: 0
+    polutionDep: 0
 --- !u!1 &1458391668
 GameObject:
   m_ObjectHideFlags: 0
@@ -9855,8 +9861,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 0
-  moneyMod: 0
+  price: 1500
+  moneyMod: 10000
   happyMod: 0
   polutionMod: 0
   isPurchased: 0
@@ -10035,8 +10041,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 100
-  moneyMod: 1
+  price: 500000
+  moneyMod: 10000
   happyMod: 0
   polutionMod: 0
   isPurchased: 0
@@ -11377,14 +11383,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 0
+  price: 100000
   moneyMod: 0
   happyMod: 0
   polutionMod: 0
   isPurchased: 0
   executeTime: 0.5
   infoWindow: {fileID: 1626982021}
-  Dependencies: []
+  Dependencies:
+  - name: 
+    dependency: {fileID: 4629203315643808395}
+    activated: 0
+    moneyDep: 0
+    happyDep: 0
+    polutionDep: 0
+  - name: 
+    dependency: {fileID: 1641952750}
+    activated: 0
+    moneyDep: 0
+    happyDep: 0
+    polutionDep: 0
+  - name: 
+    dependency: {fileID: 875324138}
+    activated: 0
+    moneyDep: 0
+    happyDep: 0
+    polutionDep: 0
+  - name: 
+    dependency: {fileID: 505661058}
+    activated: 0
+    moneyDep: 0
+    happyDep: 0
+    polutionDep: 0
 --- !u!64 &1832568023
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11831,8 +11861,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 1000
-  moneyMod: 2
+  price: 3600000
+  moneyMod: 656000
   happyMod: 0
   polutionMod: -1
   isPurchased: 0
@@ -11841,6 +11871,12 @@ MonoBehaviour:
   Dependencies:
   - name: 
     dependency: {fileID: 1641952750}
+    activated: 0
+    moneyDep: 0
+    happyDep: 0
+    polutionDep: 0
+  - name: 
+    dependency: {fileID: 875324138}
     activated: 0
     moneyDep: 0
     happyDep: 0
@@ -13322,7 +13358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 0
+  price: 147000
   moneyMod: 0
   happyMod: 0
   polutionMod: 0
@@ -13500,7 +13536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 0
+  price: 5300
   moneyMod: 0
   happyMod: 0
   polutionMod: 0
@@ -15003,8 +15039,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 0
-  moneyMod: 0
+  price: 5000
+  moneyMod: 6500
   happyMod: 0
   polutionMod: 0
   isPurchased: 0
@@ -15343,8 +15379,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 0
-  moneyMod: 0
+  price: 5000
+  moneyMod: 44500
   happyMod: 0
   polutionMod: 0
   isPurchased: 0
@@ -16694,14 +16730,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 0
+  price: 200000
   moneyMod: 0
   happyMod: 0
   polutionMod: 0
   isPurchased: 0
   executeTime: 0.5
   infoWindow: {fileID: 6447593046080345144}
-  Dependencies: []
+  Dependencies:
+  - name: 
+    dependency: {fileID: 4629203315643808395}
+    activated: 0
+    moneyDep: 0
+    happyDep: 0
+    polutionDep: 0
 --- !u!4 &6447593044261414261
 Transform:
   m_ObjectHideFlags: 0
@@ -17108,7 +17150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 0
+  price: 20000
   moneyMod: 0
   happyMod: 0
   polutionMod: 0
