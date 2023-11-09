@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -32,6 +33,7 @@ public class Policy : MonoBehaviour
     [Header("OnHover Settings")]
     public float executeTime;
     public GameObject infoWindow;
+    public GameObject infoBox;
     private float hoverTime = 0f;
     private bool startTimeCount;
 
@@ -40,9 +42,11 @@ public class Policy : MonoBehaviour
     [ExecuteInEditMode]
     public void Start()
     {
+        infoBox = GameObject.Find("informationalText");
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         dependencyManager = GameObject.Find("DependencyManager").GetComponent<DependencyManager>();
         dependencyManager.FindNewPolicies(); //Dumb workaround to find inactive policies when they activate
+        
 
         foreach (Dependency dependency in Dependencies) //Foreach loop naming the elements in the inspector for better readability and organization
         {
@@ -99,6 +103,7 @@ public class Policy : MonoBehaviour
         startTimeCount = false;
         hoverTime = 0f;
         infoWindow.SetActive(false);
+        infoBox.GetComponentInChildren<TextMeshPro>().enabled = false;
     }
 
     private void Update()
@@ -111,6 +116,7 @@ public class Policy : MonoBehaviour
             {
                 startTimeCount = false;
                 infoWindow.SetActive(true);
+                infoBox.GetComponentInChildren<TextMeshPro>().enabled = true;
             }
         }
     }
