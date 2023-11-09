@@ -33,20 +33,18 @@ public class Policy : MonoBehaviour
     [Header("OnHover Settings")]
     public float executeTime;
     public GameObject infoWindow;
-    public GameObject infoBox;
     private float hoverTime = 0f;
     private bool startTimeCount;
+    public TextMeshProUGUI textPrice;
 
     [SerializeField] public Dependency[] Dependencies;
 
     [ExecuteInEditMode]
     public void Start()
     {
-        infoBox = GameObject.Find("informationalText");
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         dependencyManager = GameObject.Find("DependencyManager").GetComponent<DependencyManager>();
-        dependencyManager.FindNewPolicies(); //Dumb workaround to find inactive policies when they activate
-        
+        dependencyManager.FindNewPolicies(); //Dumb workaround to find inactive policies when they activate        
 
         foreach (Dependency dependency in Dependencies) //Foreach loop naming the elements in the inspector for better readability and organization
         {
@@ -65,8 +63,9 @@ public class Policy : MonoBehaviour
             gameManager.happinessModifier = gameManager.happinessModifier + happyMod;
             gameManager.polutionModifier = gameManager.polutionModifier + polutionMod;
             gameObject.GetComponent<MeshRenderer>().material.color = Color.green;
-            gameObject.GetComponentInChildren<Image>().color = Color.green;
+            gameObject.GetComponentInChildren<Image>().color = Color.green; //Gives error till every policy has an icon.
 
+            UpdateInformation();
             dependencyManager.CheckAllDependencies();
         }
     }
@@ -103,7 +102,29 @@ public class Policy : MonoBehaviour
         startTimeCount = false;
         hoverTime = 0f;
         infoWindow.SetActive(false);
-        infoBox.GetComponentInChildren<TextMeshPro>().enabled = false;
+    }
+
+    private void UpdateInformation()
+    {
+        if (textPrice != null)
+        {
+            if (isPurchased)
+            {
+                textPrice.color = Color.gray;
+                textPrice.fontStyle = FontStyles.Strikethrough;
+            }
+            else
+            {
+                if (gameManager.money < price)
+                {
+                    textPrice.color = Color.red;
+                }
+                else
+                {
+                    textPrice.color = Color.green;
+                }
+            }
+        }
     }
 
     private void Update()
@@ -116,7 +137,10 @@ public class Policy : MonoBehaviour
             {
                 startTimeCount = false;
                 infoWindow.SetActive(true);
-                infoBox.GetComponentInChildren<TextMeshPro>().enabled = true;
+                textPrice = GameObject.Find("Information/Content/TextBox/Price").GetComponent<TextMeshProUGUI>();
+                textPrice.text = "USD " + price.ToString();
+
+                UpdateInformation();
             }
         }
     }
