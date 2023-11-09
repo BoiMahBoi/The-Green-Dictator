@@ -2723,9 +2723,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 400
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 4
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3245,10 +3245,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 11000
-  moneyMod: 3500
-  happyMod: 0
-  polutionMod: 0
+  price: 53000
+  moneyMod: 200
+  happyMod: 0.04
+  polutionMod: -0.06
   isPurchased: 0
   executeTime: 0.5
   infoWindow: {fileID: 1696618254}
@@ -4218,10 +4218,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 350000
-  moneyMod: 20000
-  happyMod: 0
-  polutionMod: -0.5
+  price: 930000
+  moneyMod: 6000
+  happyMod: 0.06
+  polutionMod: 0.05
   isPurchased: 0
   executeTime: 0.5
   infoWindow: {fileID: 222279508}
@@ -8318,10 +8318,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 200000
-  moneyMod: 82
-  happyMod: 0
-  polutionMod: 0
+  price: 380000
+  moneyMod: -200
+  happyMod: -0.03
+  polutionMod: -0.07
   isPurchased: 0
   executeTime: 0.5
   infoWindow: {fileID: 1843297570}
@@ -9389,10 +9389,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 5000
-  moneyMod: 9000
-  happyMod: 0
-  polutionMod: 0
+  price: 3000
+  moneyMod: 300
+  happyMod: -0.06
+  polutionMod: -0.02
   isPurchased: 0
   executeTime: 0.5
   infoWindow: {fileID: 1933852581}
@@ -9628,12 +9628,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0d5d435e0f6c940a21aae9d9969ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  happiness: 100
-  polution: 100
-  money: 100000
+  happiness: 20
+  polution: 40
+  money: 10000
   timeInSeconds: 360
-  polutionModifier: 1
-  happinessModifier: 1
+  polutionModifier: 0.02
+  happinessModifier: -0.02
   moneyModifier: 1
   MoneyUI: {fileID: 940294395}
   HappyUI: {fileID: 2044395015}
@@ -13579,10 +13579,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 24000
-  moneyMod: -30300
-  happyMod: -0.5
-  polutionMod: -0.5
+  price: 41000
+  moneyMod: -800
+  happyMod: -0.01
+  polutionMod: -0.01
   isPurchased: 0
   executeTime: 0.5
   infoWindow: {fileID: 702521923}
@@ -15169,10 +15169,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 1500
-  moneyMod: 10000
-  happyMod: 0
-  polutionMod: 0
+  price: 635000
+  moneyMod: 900
+  happyMod: 0.09
+  polutionMod: 0.03
   isPurchased: 0
   executeTime: 0.5
   infoWindow: {fileID: 1337021372}
@@ -15350,10 +15350,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 500000
-  moneyMod: 10000
-  happyMod: 0
-  polutionMod: 0
+  price: 415000
+  moneyMod: -560
+  happyMod: 0.02
+  polutionMod: -0.05
   isPurchased: 0
   executeTime: 0.5
   infoWindow: {fileID: 247732982}
@@ -17111,10 +17111,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 100000
+  price: 111000
   moneyMod: 0
-  happyMod: 0
-  polutionMod: 0
+  happyMod: 0.01
+  polutionMod: -0.01
   isPurchased: 0
   executeTime: 0.5
   infoWindow: {fileID: 1938373726}
@@ -17500,9 +17500,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 1
   m_MinValue: 0
-  m_MaxValue: 400
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 10
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -18474,10 +18474,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 3600000
-  moneyMod: 656000
-  happyMod: 0
-  polutionMod: -1
+  price: 805000
+  moneyMod: -700
+  happyMod: 0.06
+  polutionMod: -0.08
   isPurchased: 0
   executeTime: 0.5
   infoWindow: {fileID: 2048086828}
@@ -20704,10 +20704,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 147000
+  price: 207000
   moneyMod: 0
-  happyMod: 0
-  polutionMod: 0
+  happyMod: 0.02
+  polutionMod: -0.05
   isPurchased: 0
   executeTime: 0.5
   infoWindow: {fileID: 881743192}
@@ -20883,10 +20883,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 5300
+  price: 7000
   moneyMod: 0
-  happyMod: 0
-  polutionMod: 0
+  happyMod: 0.08
+  polutionMod: -0.01
   isPurchased: 0
   executeTime: 0.5
   infoWindow: {fileID: 453297829}
@@ -21815,9 +21815,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 5000
-  moneyMod: 6500
-  happyMod: 0
+  price: 15000
+  moneyMod: 1000
+  happyMod: -0.05
   polutionMod: 0
   isPurchased: 0
   executeTime: 0.5
@@ -22156,10 +22156,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 5000
-  moneyMod: 44500
-  happyMod: 0
-  polutionMod: 0
+  price: 34000
+  moneyMod: 2000
+  happyMod: -0.07
+  polutionMod: -0.04
   isPurchased: 0
   executeTime: 0.5
   infoWindow: {fileID: 667110907}
@@ -22834,10 +22834,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 200000
+  price: 252000
   moneyMod: 0
-  happyMod: 0
-  polutionMod: 0
+  happyMod: -0.05
+  polutionMod: -0.02
   isPurchased: 0
   executeTime: 0.5
   infoWindow: {fileID: 144316702}
@@ -23255,10 +23255,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6972ef8d14685a45ba82581f91bf7b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 20000
+  price: 8000
   moneyMod: 0
   happyMod: 0
-  polutionMod: 0
+  polutionMod: -0.03
   isPurchased: 0
   executeTime: 0.5
   infoWindow: {fileID: 533672954}
