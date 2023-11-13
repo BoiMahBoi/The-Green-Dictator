@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class Policy : MonoBehaviour
 {
@@ -31,13 +33,14 @@ public class Policy : MonoBehaviour
     public bool isPurchased = false;
 
     [Header("OnHover Settings")]
-    public float executeTime;
+    float executeTime = 0f;
     public GameObject infoWindow;
     private float hoverTime = 0f;
     private bool startTimeCount;
     public TextMeshProUGUI textPrice;
 
-    [SerializeField] public Dependency[] Dependencies;
+    public Dependency[] Dependencies;
+    public bool[] dependencyState;
 
     [ExecuteInEditMode]
     public void Start()
@@ -50,6 +53,8 @@ public class Policy : MonoBehaviour
         {
             dependency.name = dependency.dependency.name;
         }
+        
+        dependencyState = new bool[Dependencies.Length];
     }
 
 
@@ -63,7 +68,7 @@ public class Policy : MonoBehaviour
             gameManager.happinessModifier = gameManager.happinessModifier + happyMod;
             gameManager.polutionModifier = gameManager.polutionModifier + polutionMod;
             gameObject.GetComponent<MeshRenderer>().material.color = Color.green;
-            gameObject.GetComponentInChildren<Image>().color = Color.green; //Gives error till every policy has an icon.
+            gameObject.GetComponentInChildren<UnityEngine.UI.Image>().color = Color.green; //Gives error till every policy has an icon.
 
             UpdateInformation();
             dependencyManager.CheckAllDependencies();
@@ -95,13 +100,41 @@ public class Policy : MonoBehaviour
     private void OnMouseEnter()
     {
         startTimeCount = true;
+        HighlightDependencies(true);
     }
 
     private void OnMouseExit()
     {
+        HighlightDependencies(false);
         startTimeCount = false;
         hoverTime = 0f;
         infoWindow.SetActive(false);
+    }
+
+
+
+    private void HighlightDependencies(bool setActive)
+    {
+        for (int i = 0; i < Dependencies.Length; i++)
+        {
+            Dependencies[i].dependency.transform.Find("IconCanvas").GetChild(1).gameObject.SetActive(setActive);
+
+            if (setActive)
+            {
+                if (Dependencies[i].dependency.active == false)
+                {
+                    Dependencies[i].dependency.gameObject.SetActive(setActive);
+                    dependencyState[i] = false;
+                }
+                else
+                {
+                    dependencyState[i] = true;
+                }
+            } else
+            {
+                Dependencies[i].dependency.SetActive(dependencyState[i]);
+            }            
+        }
     }
 
     private void UpdateInformation()
