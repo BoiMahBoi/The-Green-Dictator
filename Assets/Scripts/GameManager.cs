@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public float polutionModifier = 0;
     public float happinessModifier = 0;
     public float moneyModifier = 0;
+    public float inGameTimeSpeed = 1; //In game seconds per real world second.
 
     [Header("UI References")]
     public TextMeshProUGUI MoneyUI;
@@ -23,10 +24,11 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI PolutionUI;
     public TextMeshProUGUI TimeUI;
 
-    [Header("Bar References")]
+    [Header("Script References")]
     public BarScript barScript;
     public HappyBarScript happyBarScript;
     public PoluBarScript poluBarScript;
+    public Calendar calendar;
 
     private bool gameOver = false;
     [SerializeField] private bool isGame = false; //Boolean for whether the game is actively playing or not
@@ -48,20 +50,12 @@ public class GameManager : MonoBehaviour
     {
         isGame = !isGame;
     }
-    
-    //private void FixedUpdate()
-    //{
-    //    CalcHappiness();
-    //    CalcMoney();
-    //    CalcPolution();
-    //    CheckGameStatus();       
-    //}
 
     private void Update()
     {
         if (isGame) //If game is playing
         {
-            timeInSeconds -= Time.deltaTime; //Substract time from timeInSeconds
+            timeInSeconds -= Time.deltaTime * inGameTimeSpeed; //Substract time from timeInSeconds
             barScript.UpdateTimeBar(timeInSeconds); //Update Time Bar
 
             CalcHappiness();
@@ -91,21 +85,21 @@ public class GameManager : MonoBehaviour
 
     private void CalcHappiness()
     {
-        happiness = happiness + (happinessModifier * Time.deltaTime);
+        happiness = happiness + (happinessModifier * Time.deltaTime * inGameTimeSpeed);
         happyBarScript.UpdateHappyBar(happiness);
         //HappyUI.SetText("Happiness: " + happiness.ToString());//
     }
 
     private void CalcPolution()
     {
-        polution = polution + (polutionModifier * Time.deltaTime);
+        polution = polution + (polutionModifier * Time.deltaTime * inGameTimeSpeed);
         poluBarScript.UpdatePoluBar(polution);
         //PolutionUI.SetText("Polution: " + polution.ToString());//
     }
 
     private void CalcMoney()
     {
-        money = money + (moneyModifier * Time.deltaTime);
+        money = money + (moneyModifier * Time.deltaTime * inGameTimeSpeed);
         MoneyUI.SetText("Money: " + money.ToString());
     }
 
