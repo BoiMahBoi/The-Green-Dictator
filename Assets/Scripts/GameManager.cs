@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI HappyUI;
     public TextMeshProUGUI PolutionUI;
     public TextMeshProUGUI TimeUI;
+
+    [Header("Pause Button")]
+    public UnityEngine.UI.Button PauseButton;
+    public Sprite ResumeIcon;
+    public Sprite PauseIcon;
 
     [Header("Script References")]
     public BarScript barScript;
@@ -49,6 +55,14 @@ public class GameManager : MonoBehaviour
     public void ToggleGamePause() //Function that pauses and unpauses game
     {
         isGame = !isGame;
+        
+        if(isGame)
+        {
+            PauseButton.image.sprite = PauseIcon;
+        } else
+        {
+            PauseButton.image.sprite = ResumeIcon;
+        }
     }
 
     private void Update()
@@ -77,7 +91,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.P)) //Pause and Unpause game when pressing P
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Space)) //Pause and Unpause game when pressing P or Space
         {
             ToggleGamePause();
         }
