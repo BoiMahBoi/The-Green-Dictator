@@ -77,6 +77,11 @@ public class GameManager : MonoBehaviour
             CalcPolution();
             CheckGameStatus();
 
+            if ((int)(timeInSeconds % 12) != calendar.MonthCount)
+            {
+                CalcCalendar();
+            }
+
             if (timeInSeconds <= 0) 
             {
                 timeInSeconds = 0;
@@ -97,6 +102,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void CalcCalendar()
+    {
+        calendar.NewMonth((int)(timeInSeconds % 12));
+    }
+
     private void CalcHappiness()
     {
         happiness = happiness + (happinessModifier * Time.deltaTime * inGameTimeSpeed);
@@ -114,7 +124,7 @@ public class GameManager : MonoBehaviour
     private void CalcMoney()
     {
         money = money + (moneyModifier * Time.deltaTime * inGameTimeSpeed);
-        MoneyUI.SetText("Money: " + money.ToString());
+        MoneyUI.SetText("Money: " + ((int)(money)).ToString());
     }
 
     private void CheckGameStatus() {
