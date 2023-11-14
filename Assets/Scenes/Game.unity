@@ -3565,7 +3565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 53000
   moneyMod: 200
-  happyMod: 0.04
+  happyMod: -0.04
   polutionMod: -0.06
   isPurchased: 0
   infoWindow: {fileID: 1696618254}
@@ -4539,7 +4539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 930000
   moneyMod: 6000
-  happyMod: 0.06
+  happyMod: -0.06
   polutionMod: 0.05
   isPurchased: 0
   infoWindow: {fileID: 222279508}
@@ -9185,7 +9185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 380000
   moneyMod: -200
-  happyMod: -0.03
+  happyMod: 0.03
   polutionMod: -0.07
   isPurchased: 0
   infoWindow: {fileID: 1843297570}
@@ -10346,7 +10346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 3000
   moneyMod: 300
-  happyMod: -0.06
+  happyMod: 0.06
   polutionMod: -0.02
   isPurchased: 0
   infoWindow: {fileID: 1933852581}
@@ -10583,12 +10583,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0d5d435e0f6c940a21aae9d9969ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  happiness: 20
+  happiness: 50
   polution: 40
   money: 10000
   timeInSeconds: 360
   polutionModifier: 0.02
-  happinessModifier: -0.02
+  happinessModifier: 0.02
   moneyModifier: 1
   inGameTimeSpeed: 1
   MoneyUI: {fileID: 940294395}
@@ -14950,7 +14950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 41000
   moneyMod: -800
-  happyMod: -0.01
+  happyMod: 0.01
   polutionMod: -0.01
   isPurchased: 0
   infoWindow: {fileID: 702521923}
@@ -16596,7 +16596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 635000
   moneyMod: 900
-  happyMod: 0.09
+  happyMod: -0.09
   polutionMod: 0.03
   isPurchased: 0
   infoWindow: {fileID: 1337021372}
@@ -16777,7 +16777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 415000
   moneyMod: -560
-  happyMod: 0.02
+  happyMod: -0.02
   polutionMod: -0.05
   isPurchased: 0
   infoWindow: {fileID: 247732982}
@@ -18838,7 +18838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 111000
   moneyMod: 0
-  happyMod: 0.01
+  happyMod: -0.01
   polutionMod: -0.01
   isPurchased: 0
   infoWindow: {fileID: 1938373726}
@@ -20201,7 +20201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 805000
   moneyMod: -700
-  happyMod: 0.06
+  happyMod: -0.06
   polutionMod: -0.08
   isPurchased: 0
   infoWindow: {fileID: 2048086828}
@@ -22690,7 +22690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 207000
   moneyMod: 0
-  happyMod: 0.02
+  happyMod: -0.02
   polutionMod: -0.05
   isPurchased: 0
   infoWindow: {fileID: 881743192}
@@ -22869,7 +22869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 7000
   moneyMod: 0
-  happyMod: 0.08
+  happyMod: -0.08
   polutionMod: -0.01
   isPurchased: 0
   infoWindow: {fileID: 453297829}
@@ -23801,7 +23801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 15000
   moneyMod: 1000
-  happyMod: -0.05
+  happyMod: 0.05
   polutionMod: 0
   isPurchased: 0
   infoWindow: {fileID: 1756650724}
@@ -24142,7 +24142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 34000
   moneyMod: 2000
-  happyMod: -0.07
+  happyMod: 0.07
   polutionMod: -0.04
   isPurchased: 0
   infoWindow: {fileID: 667110907}
@@ -24820,7 +24820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 252000
   moneyMod: 0
-  happyMod: -0.05
+  happyMod: 0.05
   polutionMod: -0.02
   isPurchased: 0
   infoWindow: {fileID: 144316702}
