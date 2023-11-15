@@ -3017,6 +3017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 337368144}
+  fill: {fileID: 365911475}
 --- !u!1 &353997994
 GameObject:
   m_ObjectHideFlags: 0
@@ -20687,6 +20688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1869276043}
+  fill: {fileID: 72728669}
 --- !u!1 &1870750816
 GameObject:
   m_ObjectHideFlags: 0
