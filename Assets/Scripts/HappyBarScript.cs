@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class HappyBarScript : MonoBehaviour
 {
     public Slider slider; //Reference to slider controlling visual Happy
+    public Image fill;
 
     public void SetHappyBar(float Happy) //Setting bar to Happy
     {
@@ -16,5 +17,7 @@ public class HappyBarScript : MonoBehaviour
     public void UpdateHappyBar(float HappyValue) //Updating the Happy Bar to current value
     {
         slider.value = HappyValue;
+        fill.color = Color.Lerp(Color.green, Color.red, HappyValue / 100);
+
     }
 }
