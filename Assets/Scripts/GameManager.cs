@@ -138,7 +138,7 @@ public class GameManager : MonoBehaviour
             StartCoroutine(EndGame("You lost! No more money left in the bank."));
         }
 
-        if ((happiness <= 0 && happinessModifier <= 0) && !gameOver)
+        if ((happiness >= 100 && happinessModifier >= 0) && !gameOver)
         {
             StartCoroutine(EndGame("You lost! The people rebelled against you!"));
         }
