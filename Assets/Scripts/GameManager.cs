@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI HappyUI;
     public TextMeshProUGUI PolutionUI;
     public TextMeshProUGUI TimeUI;
+    public GameObject ClockShort;
+    public GameObject ClockLong;
 
     [Header("Pause Button")]
     public UnityEngine.UI.Button PauseButton;
@@ -71,6 +73,10 @@ public class GameManager : MonoBehaviour
         {
             timeInSeconds -= Time.deltaTime * inGameTimeSpeed; //Substract time from timeInSeconds
             barScript.UpdateTimeBar(timeInSeconds); //Update Time Bar
+
+            ClockLong.transform.Rotate(-Vector3.forward * 360 * Time.deltaTime * inGameTimeSpeed);
+            ClockShort.transform.Rotate((-Vector3.forward * 360 * Time.deltaTime * inGameTimeSpeed) / 12);
+
 
             CalcHappiness();
             CalcMoney();
