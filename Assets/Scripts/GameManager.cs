@@ -130,7 +130,7 @@ public class GameManager : MonoBehaviour
     private void CalcMoney()
     {
         money = money + (moneyModifier * Time.deltaTime * inGameTimeSpeed);
-        MoneyUI.SetText("Money: " + ((int)(money)).ToString());
+        MoneyUI.SetText("DKK: " + ((int)(money)).ToString());
     }
 
     private void CheckGameStatus() {

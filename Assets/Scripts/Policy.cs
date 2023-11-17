@@ -171,7 +171,7 @@ public class Policy : MonoBehaviour
                 startTimeCount = false;
                 infoWindow.SetActive(true);
                 textPrice = GameObject.Find("Information/Content/TextBox/Price").GetComponent<TextMeshProUGUI>();
-                textPrice.text = "USD " + price.ToString();
+                textPrice.text = "DKK " + price.ToString();
 
                 UpdateInformation();
             }
