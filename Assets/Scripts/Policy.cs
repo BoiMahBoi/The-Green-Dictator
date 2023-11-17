@@ -121,7 +121,7 @@ public class Policy : MonoBehaviour
 
             if (setActive)
             {
-                if (Dependencies[i].dependency.active == false)
+                if (Dependencies[i].dependency.activeSelf == false)
                 {
                     Dependencies[i].dependency.gameObject.SetActive(setActive);
                     dependencyState[i] = false;
