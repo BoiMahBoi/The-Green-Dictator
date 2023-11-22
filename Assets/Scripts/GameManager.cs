@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
     [Header("Score")]
     public TextMeshProUGUI ScoreText;
     public TextMeshProUGUI HighscoreText;
+    public GameObject ScoreMenu;
 
     [Header("Pause Button")]
     public UnityEngine.UI.Button PauseButton;
@@ -48,6 +50,7 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
+        ScoreMenu.SetActive(false);
         barScript.SetTimeBar(timeInSeconds); //Setting the Time Bar to the TimeInSeconds variable
         happyBarScript.UpdateHappyBar(happiness); //Setting the Happy Bar to the happiness variable
         StartGame(); //Called in Start() since there is no start button yet
@@ -138,7 +141,7 @@ public class GameManager : MonoBehaviour
 
     private void CalcScore()
     {
-        score = ((1000 + money) - ((polution) + (timeInSeconds) + (happiness)) / 10);
+        score = ((1000 + (money/20)) - ((polution) + (timeInSeconds) + (happiness)) / 10);
         if(PlayerPrefs.GetFloat("Highscore") < score)
         {
             PlayerPrefs.SetFloat("Highscore", score);
@@ -161,8 +164,29 @@ public class GameManager : MonoBehaviour
         CalcScore();
         ToggleGamePause();
         gameOver = true;
-        string scoreText = endMessage + score.ToString();
-        Debug.Log(scoreText);
+        string scoreMessage = endMessage + score.ToString();
+        ScoreText.SetText(scoreMessage);
+        string highscoreMessage = "Highscore: " + PlayerPrefs.GetFloat("Highscore").ToString();
+        HighscoreText.SetText(highscoreMessage);
+        ScoreMenu.SetActive(true);
         yield return new WaitForSeconds(1);
     }
+
+
+
+    // Methods for the scoreMenu buttons.
+    public void TryAgain()
+    {
+        SceneManager.LoadScene("Game");
+    }
+
+    public void ToMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+
+
+
+
 }
