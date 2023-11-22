@@ -127,7 +127,7 @@ public class GameManager : MonoBehaviour
     {
         happiness = happiness + (happinessModifier * Time.deltaTime * inGameTimeSpeed);
         happyBarScript.UpdateHappyBar(happiness);
-        AngerMod.SetText("Anger modifiger: " + happinessModifier.ToString());
+        AngerMod.SetText(happinessModifier.ToString());
 
     }
 
@@ -135,7 +135,7 @@ public class GameManager : MonoBehaviour
     {
         polution = polution + (polutionModifier * Time.deltaTime * inGameTimeSpeed);
         poluBarScript.UpdatePoluBar(polution);
-        PolutionMod.SetText("Polution modifier: " + polutionModifier.ToString());
+        PolutionMod.SetText(polutionModifier.ToString());
     }
 
     private void CalcMoney()
