@@ -24,7 +24,9 @@ public class GameManager : MonoBehaviour
     [Header("UI References")]
     public TextMeshProUGUI MoneyUI;
     public TextMeshProUGUI HappyUI;
+    public TextMeshProUGUI AngerMod;
     public TextMeshProUGUI PolutionUI;
+    public TextMeshProUGUI PolutionMod;
     public TextMeshProUGUI TimeUI;
     public GameObject ClockShort;
     public GameObject ClockLong;
@@ -125,12 +127,15 @@ public class GameManager : MonoBehaviour
     {
         happiness = happiness + (happinessModifier * Time.deltaTime * inGameTimeSpeed);
         happyBarScript.UpdateHappyBar(happiness);
+        AngerMod.SetText("Anger modifiger: " + happinessModifier.ToString());
+
     }
 
     private void CalcPolution()
     {
         polution = polution + (polutionModifier * Time.deltaTime * inGameTimeSpeed);
         poluBarScript.UpdatePoluBar(polution);
+        PolutionMod.SetText("Polution modifier: " + polutionModifier.ToString());
     }
 
     private void CalcMoney()
