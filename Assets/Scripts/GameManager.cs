@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public float polution = 0;
     public float money = 0;
     public float timeInSeconds = 360f; //The countdown time in seconds, before the game ends (Each second is a month)
+    public float score;
 
     [Header("Modifiers")]
     public float polutionModifier = 0;
@@ -26,6 +27,10 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI TimeUI;
     public GameObject ClockShort;
     public GameObject ClockLong;
+
+    [Header("Score")]
+    public TextMeshProUGUI ScoreText;
+    public TextMeshProUGUI HighscoreText;
 
     [Header("Pause Button")]
     public UnityEngine.UI.Button PauseButton;
@@ -94,10 +99,10 @@ public class GameManager : MonoBehaviour
 
                 if (polution > 0)
                 {
-                    StartCoroutine(EndGame("You lost! You didn't go carbon neutral in time."));
+                    StartCoroutine(EndGame("You lost! You didn't go carbon neutral in time. Your final score was:" + score.ToString()));
                 } else
                 {
-                    StartCoroutine(EndGame("Congratulations, you won! You went carbon neutral!"));
+                    StartCoroutine(EndGame("Congratulations, you won! You went carbon neutral! Your final score was:" + score.ToString()));
                 }
             }
         }
@@ -117,14 +122,12 @@ public class GameManager : MonoBehaviour
     {
         happiness = happiness + (happinessModifier * Time.deltaTime * inGameTimeSpeed);
         happyBarScript.UpdateHappyBar(happiness);
-        //HappyUI.SetText("Happiness: " + happiness.ToString());//
     }
 
     private void CalcPolution()
     {
         polution = polution + (polutionModifier * Time.deltaTime * inGameTimeSpeed);
         poluBarScript.UpdatePoluBar(polution);
-        //PolutionUI.SetText("Polution: " + polution.ToString());//
     }
 
     private void CalcMoney()
@@ -133,22 +136,33 @@ public class GameManager : MonoBehaviour
         MoneyUI.SetText("DKK: " + ((int)(money)).ToString());
     }
 
+    private void CalcScore()
+    {
+        score = ((1000 + money) - ((polution) + (timeInSeconds) + (happiness)) / 10);
+        if(PlayerPrefs.GetFloat("Highscore") < score)
+        {
+            PlayerPrefs.SetFloat("Highscore", score);
+        }
+    }
+
     private void CheckGameStatus() {
         if((money <= 0 && moneyModifier <= 0) && !gameOver) {
-            StartCoroutine(EndGame("You lost! No more money left in the bank."));
+            StartCoroutine(EndGame("You lost! No more money left in the bank. Your final score was: "));
         }
 
         if ((happiness >= 100 && happinessModifier >= 0) && !gameOver)
         {
-            StartCoroutine(EndGame("You lost! The people rebelled against you!"));
+            StartCoroutine(EndGame("You lost! The people rebelled against you! Your final score was: "));
         }
     }
 
     private IEnumerator EndGame(string endMessage)
     {
+        CalcScore();
         ToggleGamePause();
         gameOver = true;
-        Debug.Log(endMessage);
+        string scoreText = endMessage + score.ToString();
+        Debug.Log(scoreText);
         yield return new WaitForSeconds(1);
     }
 }
