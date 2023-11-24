@@ -105,10 +105,10 @@ public class GameManager : MonoBehaviour
 
                 if (polution > 0)
                 {
-                    StartCoroutine(EndGame("You lost! You didn't go carbon neutral in time. Your final score was:" + score.ToString()));
+                    StartCoroutine(EndGame("You lost! You didn't go carbon neutral in time. Your final score was: " + score.ToString()));
                 } else
                 {
-                    StartCoroutine(EndGame("Congratulations, you won! You went carbon neutral! Your final score was:" + score.ToString()));
+                    StartCoroutine(EndGame("Congratulations, you won! You went carbon neutral! Your final score was: " + score.ToString()));
                 }
             }
         }
@@ -167,10 +167,10 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator EndGame(string endMessage)
     {
-        CalcScore();
         ToggleGamePause();
+        CalcScore();
         gameOver = true;
-        string scoreMessage = endMessage + score.ToString();
+        string scoreMessage = endMessage.Remove(endMessage.Length - 1) + score.ToString();
         ScoreText.SetText(scoreMessage);
         string highscoreMessage = "Highscore: " + PlayerPrefs.GetFloat("Highscore").ToString();
         HighscoreText.SetText(highscoreMessage);
