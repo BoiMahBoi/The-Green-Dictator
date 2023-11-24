@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour
     public float polution = 0;
     public float money = 0;
     public float timeInSeconds = 360f; //The countdown time in seconds, before the game ends (Each second is a month)
-    public float score;
+    public int score;
 
     [Header("Modifiers")]
     public float polutionModifier = 0;
@@ -127,7 +128,7 @@ public class GameManager : MonoBehaviour
     {
         happiness = happiness + (happinessModifier * Time.deltaTime * inGameTimeSpeed);
         happyBarScript.UpdateHappyBar(happiness);
-        AngerMod.SetText(happinessModifier.ToString());
+        AngerMod.SetText(happinessModifier.ToString("F2"));
 
     }
 
@@ -135,7 +136,7 @@ public class GameManager : MonoBehaviour
     {
         polution = polution + (polutionModifier * Time.deltaTime * inGameTimeSpeed);
         poluBarScript.UpdatePoluBar(polution);
-        PolutionMod.SetText(polutionModifier.ToString());
+        PolutionMod.SetText(polutionModifier.ToString("F2"));
     }
 
     private void CalcMoney()
@@ -146,7 +147,7 @@ public class GameManager : MonoBehaviour
 
     private void CalcScore()
     {
-        score = ((1000 + (money/20)) - ((polution) + (timeInSeconds) + (happiness)) / 10);
+        score = ((1000 + ((int)money/20)) - (((int)polution*10) + ((int)timeInSeconds) + ((int)happiness*10)) / 20);
         if(PlayerPrefs.GetFloat("Highscore") < score)
         {
             PlayerPrefs.SetFloat("Highscore", score);
