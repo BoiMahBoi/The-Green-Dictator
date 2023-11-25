@@ -37,10 +37,12 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI HighscoreText;
     public GameObject ScoreMenu;
 
-    [Header("Pause Button")]
+    [Header("PlayState Buttons")]
     public UnityEngine.UI.Button PauseButton;
     public Sprite ResumeIcon;
     public Sprite PauseIcon;
+    public UnityEngine.UI.Button FastForwardButton;
+    public TextMeshProUGUI GameSpeedText;
 
     [Header("Script References")]
     public BarScript barScript;
@@ -75,6 +77,20 @@ public class GameManager : MonoBehaviour
         } else
         {
             PauseButton.image.sprite = ResumeIcon;
+        }
+    }
+
+    public void ToggleGameSpeed() //Function that pauses and unpauses game
+    {
+        if (inGameTimeSpeed == 1)
+        {
+            inGameTimeSpeed = 2;
+            GameSpeedText.SetText("x2");
+
+        } else
+        {
+            inGameTimeSpeed = 1;
+            GameSpeedText.SetText("x1");
         }
     }
 
