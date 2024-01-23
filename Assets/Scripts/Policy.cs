@@ -110,8 +110,6 @@ public class Policy : MonoBehaviour
         infoWindow.SetActive(false);
     }
 
-
-
     private void HighlightDependencies(bool setActive)
     {
         for (int i = 0; i < Dependencies.Length; i++)
